@@ -9,6 +9,6 @@ pip install -e .
 ## Train
 Run a single model
 ```
-python main.py
+python3 main.py
 ```
 
