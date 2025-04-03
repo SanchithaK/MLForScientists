@@ -6,3 +6,6 @@ class Kmeans():
         pass
     def predict(X):
         pass
+    
+def train_knn(params={},data={}):
+    pass

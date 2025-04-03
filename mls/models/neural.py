@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from tqdm import trange
 
 
 class MultiOutputNeuralNetwork(nn.Module):
@@ -21,11 +22,8 @@ class MultiOutputNeuralNetwork(nn.Module):
     return x
    
    
-
-
-
 def train_nn(params= {},data={}):
-    EPOCHS = params["epoch"]
+    epochs = params["epoch"]
     lr = params["lr"]
     batch_size = params["batch_size"]
     X,y = data['X'],data['y']
@@ -34,15 +32,15 @@ def train_nn(params= {},data={}):
     loss_fn = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(),lr=lr)
     losses = []
-    for epoch in range(epochs):
+    for epoch in trange(epochs):
         batch_loss = []
         for batch_number in (0,dataset_size,batch_size):
             start_index = batch_number
             end_index = start_index + batch_size
             if end_index > dataset_size:
                 end_index = dataset_size
-            X_batch = X[start_index:end_index]
-            y_batch = y[start_index:end_index]
+            X_batch = torch.tensor(X[start_index:end_index],dtype=torch.float32)
+            y_batch = torch.tensor(y[start_index:end_index],dtype=torch.float32)
             y_pred = model(X_batch)
             loss = loss_fn(y_pred, y_batch)
             optimizer.zero_grad()
@@ -52,5 +50,7 @@ def train_nn(params= {},data={}):
         epoch_loss = torch.mean(batch_loss)
         losses.append(epoch_loss)
         print(f'epoch={epoch} epoch_loss={epoch_loss}')
-        
+    plot_and_save(x=range(losses),y = losses,filename="nn_loss.png") 
     return model,losses
+
+

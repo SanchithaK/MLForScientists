@@ -9,6 +9,6 @@ pip install -e .
 ## Train
 Run a single model
 ```
-python mls/main.py --data_dir <path> --model nn --lr 0.003
+python main.py
 ```
 

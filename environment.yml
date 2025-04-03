@@ -148,3 +148,4 @@ dependencies:
       - websocket-client==1.8.0
       - xgboost==2.1.4
       - zipp==3.21.0
+      - tqdm==4.67.1
