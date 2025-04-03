@@ -1,7 +1,7 @@
 
 ## Set up conda environment
 ```
-conda env create -f environment.yaml
+conda env create -f env.yaml
 conda activate mls
 pip install -e .
 ```
