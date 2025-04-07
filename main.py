@@ -19,7 +19,7 @@ def run_workflow():
     train_dataset = load_dataset(params=params['dataset'],split="train")
     test_dataset = load_dataset(params=params['dataset'],split="test")
     trained_model = train_model(params=params['model'],data=train_dataset)
-    metric = evaluate(model=trained,params=params['model'],data=test_dataset)
+    metric = evaluate(model=traine_model,params=params['model'],data=test_dataset)
     return trained_model,metric
 
 if __name__ == '__main__':
