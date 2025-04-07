@@ -1,5 +1,6 @@
 
 ## Set up conda environment
+Please install the env.yaml file depending on your Operating System 
 ```
 conda env create -f env_{OS}.yaml where OS is mac/windows
 conda activate mls
