@@ -5,7 +5,6 @@ from mls.evaluation.metrics import evaluate
 from mls.utils.utils import load_yaml
 from pathlib import Path
 import os
-# import argparse
 
 import yaml
 
@@ -16,10 +15,9 @@ def run_workflow():
     params = load_yaml(params_path)
     print("###params###")
     print(params)
-    train_dataset = load_dataset(params=params['dataset'],split="train")
-    test_dataset = load_dataset(params=params['dataset'],split="test")
-    trained_model = train_model(params=params['model'],data=train_dataset)
-    metric = evaluate(model=traine_model,params=params['model'],data=test_dataset)
+    dataset = load_dataset(params=params['dataset'])
+    trained_model = train_model(params=params['model'],data=dataset['train'])
+    metric = evaluate(model=trained_model,params=params['model'],data=dataset['test'])
     return trained_model,metric
 
 if __name__ == '__main__':
