@@ -22,6 +22,7 @@ You can add a prefix identifier in env_{OS}.yaml to specify location to save env
 ## Train
 Run a single model
 ```
+conda activate mls
 python3 main.py
 ```
 
