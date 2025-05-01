@@ -1,42 +1,62 @@
+# MLForScientists
 
+**MLForScientists** is a machine learning toolkit tailored for scientists and researchers working with biomedical data. This repository features structured workflows for classification and dimensionality reduction using real-world datasets from cancer research and neuroscience.
 
-## MacOSX users
-Please install homebrew as follows: 
+## Project Structure
+
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+MLForScientists
+│
+├── env.yaml                            # Conda environment specification
+├── README.md                           # Project description
+├── data/
+│   ├── cancer_dataset.csv              # Combined cancer dataset
+│   ├── neuro_dataset.csv               # Combined neuroscience dataset
+│   ├── train_cancer.csv                # Training data for cancer
+│   ├── test_cancer.csv                 # Test data for cancer
+│   ├── train_neuro.csv                 # Training data for neuroscience
+│   └── test_neuro.csv                  # Test data for neuroscience
+│
+└── models/
+    ├── KNN_Neuro_And_Cancer.ipynb      # KNN classification for both datasets
+    ├── PCA_Cancer.ipynb                # PCA analysis on cancer data
+    ├── PCA_Neuro.ipynb                 # PCA analysis on neuroscience data
+    ├── SoftMax_Cancer.ipynb            # SoftMax classifier on cancer data
+    ├── SoftMax_Neuro.ipynb             # SoftMax classifier on neuroscience data
+    ├── xgboost_model_cancer_dataset.ipynb  # XGBoost on cancer data
+    └── xgboost_model_neuro_dataset.ipynb   # XGBoost on neuroscience data
 ```
-Then install a package needed to run XGBoost
-```
-brew install libomp
-```
-## Set up conda environment
-Please install the env.yaml file 
-```
+
+## ⚙️ Setup
+
+To set up your environment:
+
+```bash
 conda env create -f env.yaml
-conda activate mls
-pip install -e .
+conda activate MLForScientists
 ```
 
-### Prefix
-You can add a prefix identifier in env.yaml to specify location to save enviornment in
-## Train
-Run a single model
-```
-conda activate mls
-python3 main.py
+Ensure Jupyter is installed in your environment to run the notebooks:
+
+```bash
+conda install notebook
 ```
 
-### Dataset
-Reference:
-```
-Jessica E. Rexach, Yuyan Cheng, Lawrence Chen, Damon Polioudakis, Li-Chun Lin, Vivianne Mitri, Andrew Elkins, Xia Han, Mai Yamakawa, Anna Yin, Daniela Calini, Riki Kawaguchi, Jing Ou, Jerry Huang, Christopher Williams, John Robinson, Stephanie E. Gaus, Salvatore Spina, Edward B. Lee, Lea T. Grinberg, Harry Vinters, John Q. Trojanowski, William W. Seeley, Dheeraj Malhotra, Daniel H. Geschwind,
-Cross-disorder and disease-specific pathways in dementia revealed by single-cell genomics,
-Cell,
-Volume 187, Issue 20,
-2024,
-Pages 5753-5774.e28,
-ISSN 0092-8674,
-https://doi.org/10.1016/j.cell.2024.08.019.
-(https://www.sciencedirect.com/science/article/pii/S0092867424009103)
-```
+## Features
+
+- **Dimensionality Reduction**: PCA is used to explore and reduce feature space complexity.
+- **Classification Models**:
+  - **K-Nearest Neighbors (KNN)** for simple, interpretable classification.
+  - **SoftMax Regression** for probabilistic multi-class classification.
+  - **XGBoost** for powerful gradient-boosted decision tree models.
+- **Data Handling**: Cleanly separated training and testing data for model validation.
+
+## Datasets
+
+- **Cancer and Neuroscience datasets** are stored as CSV files.
+- Datasets include pre-split training and testing files to facilitate direct model training and evaluation.
+
+## Usage
+
+Each notebook is self-contained and can be run independently. Open the `.ipynb` files in Jupyter Notebook or JupyterLab to explore data preprocessing, model training, and results visualization.
 
