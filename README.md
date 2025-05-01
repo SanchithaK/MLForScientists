@@ -26,6 +26,7 @@ MLForScientists
     ├── PCA_Neuro.ipynb                 # PCA analysis on neuroscience data
     ├── SoftMax_Cancer.ipynb            # SoftMax classifier on cancer data
     ├── SoftMax_Neuro.ipynb             # SoftMax classifier on neuroscience data
+    ├── preprocess_dataset.ipynb        # Preprocessing for both cancer/neuroscience
     ├── xgboost_model_cancer_dataset.ipynb  # XGBoost on cancer data
     └── xgboost_model_neuro_dataset.ipynb   # XGBoost on neuroscience data
 ```
