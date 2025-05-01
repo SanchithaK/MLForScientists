@@ -31,7 +31,7 @@ MLForScientists
     └── xgboost_model_neuro_dataset.ipynb   # XGBoost on neuroscience data
 ```
 
-## ⚙️ Setup
+## Setup
 
 To set up your environment:
 
