@@ -1,6 +1,9 @@
-# MLForScientists
+# Prediction of Disease Type Based on Underlying Mechanisms: Gene Expression versus Post-Transcriptional Drivers 
 
 The **MLForScientists** repository features structured workflows for classification and dimensionality reduction using real-world datasets from cancer research and neuroscience.
+
+## Objective
+Using supervised learning algorithms, we examine whether disease type can be more accurately predicted from single-cell RNA-sequencing (scRNA-seq) data in transcriptionally driven diseases like cancer versus in post-transcriptionally driven diseases like dementia. 
 
 ## Project Structure
 
