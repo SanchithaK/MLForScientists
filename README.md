@@ -1,6 +1,6 @@
 # MLForScientists
 
-**MLForScientists** is a machine learning toolkit tailored for scientists and researchers working with biomedical data. This repository features structured workflows for classification and dimensionality reduction using real-world datasets from cancer research and neuroscience.
+The **MLForScientists** repository features structured workflows for classification and dimensionality reduction using real-world datasets from cancer research and neuroscience.
 
 ## Project Structure
 
